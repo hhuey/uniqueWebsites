@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "Website Tracker",
+    "version": "1.0",
+    "description": "Track and display unique websites visited.",
+    "permissions": ["history","storage"],
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon16.jpg",
+        "48": "images/icon48.jpg",
+        "128": "images/icon128.jpg"
+      }
+    },
+    "icons": {
+      "16": "images/icon16.jpg",
+      "48": "images/icon48.jpg",
+      "128": "images/icon128.jpg"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "permissions": ["storage"]
+  }
+  
+  
